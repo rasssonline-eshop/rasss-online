@@ -2,36 +2,37 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
+import { formatUSDToPKR } from "@/lib/currency";
 
 const featuredProducts = [
   {
     id: 1,
     name: "Premium Wireless Headphones",
-    price: "$299",
+    priceUSD: 299,
     image: "🎧",
-    discount: "20% OFF"
+    discount: "20% OFF",
   },
   {
     id: 2,
     name: "Smart Watch Pro",
-    price: "$499",
+    priceUSD: 499,
     image: "⌚",
-    discount: "15% OFF"
+    discount: "15% OFF",
   },
   {
     id: 3,
     name: "Designer Sunglasses",
-    price: "$159",
+    priceUSD: 159,
     image: "🕶️",
-    discount: "30% OFF"
+    discount: "30% OFF",
   },
   {
     id: 4,
     name: "Laptop Backpack",
-    price: "$89",
+    priceUSD: 89,
     image: "🎒",
-    discount: "25% OFF"
-  }
+    discount: "25% OFF",
+  },
 ];
 
 const Hero = () => {
@@ -41,6 +42,9 @@ const Hero = () => {
         <div className="grid gap-8 md:grid-cols-2 items-center">
           {/* Content */}
           <div className="space-y-6 animate-fade-in">
+            <div className="flex items-center justify-start">
+              <img src="/Rasss-logo.png" alt="Rasss logo" className="h-24 w-auto md:h-40 object-contain mix-blend-multiply brightness-110 contrast-125 saturate-150 " />
+            </div>
             <div className="inline-block rounded-full bg-accent/20 px-4 py-2 text-sm font-medium text-accent-foreground">
               ✨ Shop Everything You Need
             </div>
@@ -122,7 +126,7 @@ const Hero = () => {
                         <div className="text-9xl mb-6 animate-pulse">{product.image}</div>
                         <h3 className="text-2xl font-bold text-center mb-2">{product.name}</h3>
                         <p className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                          {product.price}
+                          {formatUSDToPKR(product.priceUSD)}
                         </p>
                       </div>
                       

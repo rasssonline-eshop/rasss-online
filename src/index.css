@@ -9,15 +9,15 @@ All colors MUST be HSL.
 @layer base {
   :root {
     /* Main backgrounds */
-    --background: 0 0% 98%;
+    --background: 0 0% 82%;
     --foreground: 0 0% 10%;
 
     /* Card surfaces */
-    --card: 0 0% 100%;
+    --card: 0 0% 91%;
     --card-foreground: 0 0% 10%;
 
     /* Popover surfaces */
-    --popover: 0 0% 100%;
+    --popover: 0 0% 91%;
     --popover-foreground: 0 0% 10%;
 
     /* Primary - Vibrant Pink/Magenta */
@@ -31,7 +31,7 @@ All colors MUST be HSL.
     --secondary-foreground: 0 0% 100%;
 
     /* Muted surfaces */
-    --muted: 0 0% 96%;
+    --muted: 0 0% 92%;
     --muted-foreground: 0 0% 45%;
 
     /* Coral accent for CTAs */
@@ -45,7 +45,7 @@ All colors MUST be HSL.
 
     /* Borders and inputs */
     --border: 0 0% 90%;
-    --input: 0 0% 94%;
+    --input: 0 0% 90%;
     --ring: 330 81% 60%;
 
     /* Radius */
@@ -54,7 +54,7 @@ All colors MUST be HSL.
     /* Gradients - Pink to Cyan */
     --gradient-primary: linear-gradient(135deg, hsl(330 81% 60%), hsl(189 94% 43%));
     --gradient-hero: linear-gradient(135deg, hsl(330 81% 60% / 0.1), hsl(189 94% 43% / 0.1));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(0 0% 98%));
+    --gradient-card: linear-gradient(180deg, hsla(0, 0%, 94%, 0.925), hsla(0, 0%, 92%, 0.911));
     
     /* Shadows */
     --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.05);
@@ -83,13 +83,13 @@ All colors MUST be HSL.
   }
 
   .dark {
-    --background: 0 0% 10%;
+    --background: 0 0% 3%;
     --foreground: 0 0% 98%;
 
-    --card: 0 0% 12%;
+    --card: 0 0% 4%;
     --card-foreground: 0 0% 98%;
 
-    --popover: 0 0% 12%;
+    --popover: 0 0% 4%;
     --popover-foreground: 0 0% 98%;
 
     --primary: 330 81% 65%;
@@ -98,8 +98,8 @@ All colors MUST be HSL.
     --secondary: 189 94% 50%;
     --secondary-foreground: 0 0% 100%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 0 0% 8%;
+    --muted-foreground: 0 0% 65%;
 
     --accent: 12 88% 65%;
     --accent-foreground: 0 0% 100%;
@@ -110,6 +110,7 @@ All colors MUST be HSL.
     --border: 0 0% 20%;
     --input: 0 0% 15%;
     --ring: 330 81% 65%;
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 6%), hsl(0 0% 3%));
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;

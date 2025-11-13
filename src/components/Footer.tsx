@@ -11,7 +11,7 @@ const Footer = () => {
   };
 
   return (
-    <footer className="bg-card border-t border-border">
+    <footer className="bg-gradient-to-r from-primary to-secondary text-primary-foreground border-t border-border">
       {/* Newsletter Section */}
       <div className="border-b border-border bg-primary/5">
         <div className="container mx-auto px-4 py-12">
@@ -43,27 +43,27 @@ const Footer = () => {
           {/* Brand Section */}
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary">
-                <span className="text-xl font-bold text-white">R</span>
+              <div className="flex items-center justify-center">
+                <img src="/Rasss-logo.png" alt="Rasss logo" className="h-20 w-auto md:h-24 object-contain brightness-110 contrast-125 saturate-150 drop-shadow-xl ring-1 ring-white/60 rounded-md bg-white/5" />
               </div>
-              <span className="text-xl font-bold text-primary">Rasss</span>
+              <span className="text-xl font-bold text-yellow-400">Rasss</span>
             </div>
             
-            <p className="text-sm text-muted-foreground mb-4">
+            <p className="text-sm text-primary-foreground mb-4">
               Your trusted online shopping destination since 2020.
             </p>
 
             {/* Contact Info */}
             <div className="space-y-2 text-sm">
-              <div className="flex items-center gap-2 text-muted-foreground">
+              <div className="flex items-center gap-2 text-primary-foreground">
                 <Phone className="h-4 w-4" />
                 <span>1-800-HEALTH</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
+              <div className="flex items-center gap-2 text-primary-foreground">
                 <Mail className="h-4 w-4" />
                 <span>support@rasss.com</span>
               </div>
-              <div className="flex items-center gap-2 text-muted-foreground">
+              <div className="flex items-center gap-2 text-primary-foreground">
                 <MapPin className="h-4 w-4" />
                 <span>123 Shop St, Commerce City</span>
               </div>
@@ -79,7 +79,7 @@ const Footer = () => {
                   <li key={link}>
                     <a
                       href="#"
-                      className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                      className="text-sm text-primary-foreground hover:text-primary-foreground/80 transition-colors"
                     >
                       {link}
                     </a>
@@ -95,7 +95,7 @@ const Footer = () => {
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             {/* Social Media */}
             <div className="flex items-center gap-4">
-              <span className="text-sm text-muted-foreground">Follow us:</span>
+              <span className="text-sm text-primary-foreground">Follow us:</span>
               <div className="flex gap-2">
                 <Button size="icon" variant="outline" className="h-9 w-9 rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary">
                   <Facebook className="h-4 w-4" />
@@ -114,7 +114,7 @@ const Footer = () => {
 
             {/* Payment Methods */}
             <div className="flex items-center gap-3">
-              <span className="text-sm text-muted-foreground">We accept:</span>
+              <span className="text-sm text-primary-foreground">We accept:</span>
               <div className="flex gap-2 opacity-60">
                 <div className="h-8 w-12 rounded border border-border bg-background flex items-center justify-center text-xs font-semibold">
                   VISA

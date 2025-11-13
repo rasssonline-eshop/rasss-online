@@ -5,6 +5,7 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { X } from "lucide-react";
 import { useState } from "react";
+import { formatUSDToPKR } from "@/lib/currency";
 
 const FilterSidebar = () => {
   const [priceRange, setPriceRange] = useState([0, 100]);
@@ -47,9 +48,9 @@ const FilterSidebar = () => {
           className="my-4"
         />
         <div className="flex items-center justify-between text-sm">
-          <span className="font-medium text-primary">${priceRange[0]}</span>
+          <span className="font-medium text-primary">{formatUSDToPKR(priceRange[0])}</span>
           <span className="text-muted-foreground">to</span>
-          <span className="font-medium text-primary">${priceRange[1]}</span>
+          <span className="font-medium text-primary">{formatUSDToPKR(priceRange[1])}</span>
         </div>
       </div>
 

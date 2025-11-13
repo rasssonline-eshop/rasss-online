@@ -1,5 +1,6 @@
 import { Shield, Truck, HeadphonesIcon, Award } from "lucide-react";
 import { Card } from "@/components/ui/card";
+import { formatUSDToPKR } from "@/lib/currency";
 
 const badges = [
   {
@@ -10,7 +11,7 @@ const badges = [
   {
     icon: Truck,
     title: "Fast Delivery",
-    description: "Free shipping over $50",
+    description: `Free shipping over ${formatUSDToPKR(50)}`,
   },
   {
     icon: HeadphonesIcon,

@@ -2,8 +2,13 @@ import { ShoppingCart, Heart, Star } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import { formatUSDToPKR } from "@/lib/currency";
+import { Link } from "react-router-dom";
+import { useCart } from "@/context/CartContext";
+import { toast } from "@/components/ui/sonner";
 
 interface ProductCardProps {
+  id: string | number;
   name: string;
   price: number;
   originalPrice?: number;
@@ -23,7 +28,9 @@ const ProductCard = ({
   image,
   discount,
   inStock = true,
+  id,
 }: ProductCardProps) => {
+  const { addItem } = useCart();
   return (
     <Card className="group relative overflow-hidden border-2 hover:border-primary hover:shadow-xl transition-all duration-300 animate-scale-in">
       {/* Discount Badge */}
@@ -76,15 +83,15 @@ const ProductCard = ({
 
         {/* Product Name */}
         <h3 className="font-medium text-sm line-clamp-2 group-hover:text-primary transition-colors min-h-[2.5rem]">
-          {name}
+          <Link to={`/product/${id}`}>{name}</Link>
         </h3>
 
         {/* Price */}
         <div className="flex items-baseline gap-2">
-          <span className="text-xl font-bold text-primary">${price}</span>
+          <span className="text-xl font-bold text-primary">{formatUSDToPKR(price)}</span>
           {originalPrice && (
             <span className="text-sm text-muted-foreground line-through">
-              ${originalPrice}
+              {formatUSDToPKR(originalPrice)}
             </span>
           )}
         </div>
@@ -93,6 +100,10 @@ const ProductCard = ({
         <Button
           className="w-full rounded-full bg-accent hover:bg-accent-hover text-accent-foreground font-semibold shadow-md hover:shadow-lg transition-all"
           disabled={!inStock}
+          onClick={() => {
+            addItem({ id: String(id), name, priceUSD: price, image, quantity: 1 });
+            toast("Added to cart", { description: name });
+          }}
         >
           <ShoppingCart className="mr-2 h-4 w-4" />
           Add to Cart
