@@ -1,42 +1,42 @@
-import { Pill, Heart, Baby, Activity, Stethoscope, Sparkles } from "lucide-react";
+import { Smartphone, Shirt, Home, Dumbbell, Sparkles, Gamepad2 } from "lucide-react";
 import { Card } from "@/components/ui/card";
 
 const categories = [
   {
-    name: "Medicines",
-    icon: Pill,
+    name: "Electronics",
+    icon: Smartphone,
     color: "from-primary/20 to-primary/10",
-    count: "2,500+",
+    count: "45,000+",
   },
   {
-    name: "Personal Care",
-    icon: Sparkles,
+    name: "Fashion",
+    icon: Shirt,
     color: "from-secondary/20 to-secondary/10",
-    count: "1,800+",
+    count: "82,000+",
   },
   {
-    name: "Mother & Baby",
-    icon: Baby,
+    name: "Home & Garden",
+    icon: Home,
     color: "from-accent/20 to-accent/10",
-    count: "1,200+",
+    count: "38,000+",
   },
   {
-    name: "Wellness",
-    icon: Activity,
+    name: "Sports",
+    icon: Dumbbell,
     color: "from-primary/20 to-primary-light/10",
-    count: "3,100+",
+    count: "29,000+",
   },
   {
-    name: "Medical Devices",
-    icon: Stethoscope,
+    name: "Beauty",
+    icon: Sparkles,
     color: "from-secondary/20 to-primary/10",
-    count: "850+",
+    count: "52,000+",
   },
   {
-    name: "Vitamins",
-    icon: Heart,
+    name: "Toys & Games",
+    icon: Gamepad2,
     color: "from-accent/20 to-primary/10",
-    count: "1,600+",
+    count: "35,000+",
   },
 ];
 
@@ -49,7 +49,7 @@ const CategoryGrid = () => {
             Shop by Category
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
-            Explore our wide range of health and wellness products
+            Browse millions of products across all categories - Find anything you need
           </p>
         </div>
 

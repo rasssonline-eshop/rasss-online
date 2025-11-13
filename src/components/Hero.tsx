@@ -1,28 +1,61 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import Autoplay from "embla-carousel-autoplay";
+
+const featuredProducts = [
+  {
+    id: 1,
+    name: "Premium Wireless Headphones",
+    price: "$299",
+    image: "🎧",
+    discount: "20% OFF"
+  },
+  {
+    id: 2,
+    name: "Smart Watch Pro",
+    price: "$499",
+    image: "⌚",
+    discount: "15% OFF"
+  },
+  {
+    id: 3,
+    name: "Designer Sunglasses",
+    price: "$159",
+    image: "🕶️",
+    discount: "30% OFF"
+  },
+  {
+    id: 4,
+    name: "Laptop Backpack",
+    price: "$89",
+    image: "🎒",
+    discount: "25% OFF"
+  }
+];
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary/5 via-secondary/5 to-background">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/10 to-background">
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid gap-8 md:grid-cols-2 items-center">
           {/* Content */}
           <div className="space-y-6 animate-fade-in">
             <div className="inline-block rounded-full bg-accent/20 px-4 py-2 text-sm font-medium text-accent-foreground">
-              ✨ New Wellness Collection
+              ✨ Shop Everything You Need
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold leading-tight">
-              Your Health,
+              Your One-Stop
               <br />
               <span className="bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                Our Priority
+                Marketplace
               </span>
             </h1>
             
             <p className="text-lg text-muted-foreground max-w-md">
-              Discover premium health and wellness products from trusted brands. 
-              Quality you can trust, delivered to your door.
+              Discover millions of products from trusted sellers. 
+              Electronics, Fashion, Home & more - all in one place.
             </p>
 
             <div className="flex flex-wrap gap-4">
@@ -30,7 +63,7 @@ const Hero = () => {
                 size="lg" 
                 className="rounded-full bg-accent hover:bg-accent-hover text-accent-foreground font-semibold shadow-lg hover:shadow-xl transition-all"
               >
-                Shop Now
+                Start Shopping
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
               
@@ -39,20 +72,20 @@ const Hero = () => {
                 variant="outline" 
                 className="rounded-full border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-semibold"
               >
-                Learn More
+                Sell on Rasss
               </Button>
             </div>
 
             {/* Trust Badges */}
             <div className="flex items-center gap-6 pt-4">
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">10K+</div>
+                <div className="text-2xl font-bold text-primary">10M+</div>
                 <div className="text-xs text-muted-foreground">Products</div>
               </div>
               <div className="h-8 w-px bg-border" />
               <div className="text-center">
-                <div className="text-2xl font-bold text-primary">50K+</div>
-                <div className="text-xs text-muted-foreground">Happy Customers</div>
+                <div className="text-2xl font-bold text-primary">500K+</div>
+                <div className="text-xs text-muted-foreground">Sellers</div>
               </div>
               <div className="h-8 w-px bg-border" />
               <div className="text-center">
@@ -62,20 +95,47 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Hero Image Placeholder */}
+          {/* Hero Carousel with Popular Products */}
           <div className="relative h-[400px] md:h-[500px] animate-scale-in">
-            <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm">
-              <div className="flex h-full items-center justify-center">
-                <div className="text-center space-y-4">
-                  <div className="text-6xl">💊</div>
-                  <p className="text-sm text-muted-foreground">Hero image placeholder</p>
-                </div>
-              </div>
-            </div>
-            
-            {/* Floating Elements */}
-            <div className="absolute top-10 right-10 h-20 w-20 rounded-full bg-accent/30 blur-2xl animate-pulse" />
-            <div className="absolute bottom-10 left-10 h-32 w-32 rounded-full bg-primary/20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+            <Carousel
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+              plugins={[
+                Autoplay({
+                  delay: 3000,
+                })
+              ]}
+              className="w-full h-full"
+            >
+              <CarouselContent className="h-full">
+                {featuredProducts.map((product) => (
+                  <CarouselItem key={product.id} className="h-full">
+                    <div className="relative h-full rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm overflow-hidden">
+                      {/* Discount Badge */}
+                      <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-4 py-2 rounded-full font-bold text-sm shadow-lg z-10">
+                        {product.discount}
+                      </div>
+                      
+                      <div className="flex flex-col h-full items-center justify-center p-8">
+                        <div className="text-9xl mb-6 animate-pulse">{product.image}</div>
+                        <h3 className="text-2xl font-bold text-center mb-2">{product.name}</h3>
+                        <p className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
+                          {product.price}
+                        </p>
+                      </div>
+                      
+                      {/* Floating Elements */}
+                      <div className="absolute top-10 right-10 h-20 w-20 rounded-full bg-accent/30 blur-2xl animate-pulse" />
+                      <div className="absolute bottom-10 left-10 h-32 w-32 rounded-full bg-primary/20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="left-2" />
+              <CarouselNext className="right-2" />
+            </Carousel>
           </div>
         </div>
       </div>
