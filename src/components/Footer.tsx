@@ -4,10 +4,10 @@ import { Input } from "@/components/ui/input";
 
 const Footer = () => {
   const footerLinks = {
-    "Shop": ["Medicines", "Vitamins", "Personal Care", "Mother & Baby", "Medical Devices"],
+    "Shop": ["Electronics", "Fashion", "Home & Living", "Sports", "Books"],
     "Support": ["FAQs", "Shipping Info", "Returns", "Track Order", "Contact Us"],
     "Company": ["About Us", "Careers", "Press", "Partnerships", "Terms of Service"],
-    "Resources": ["Health Blog", "Product Guides", "Store Locator", "Gift Cards", "Privacy Policy"],
+    "Resources": ["Blog", "Product Guides", "Store Locator", "Gift Cards", "Privacy Policy"],
   };
 
   return (
@@ -17,9 +17,9 @@ const Footer = () => {
         <div className="container mx-auto px-4 py-12">
           <div className="flex flex-col md:flex-row items-center justify-between gap-6">
             <div className="text-center md:text-left">
-              <h3 className="text-2xl font-bold mb-2">Stay Healthy, Stay Informed</h3>
+              <h3 className="text-2xl font-bold mb-2">Stay Connected, Stay Updated</h3>
               <p className="text-muted-foreground">
-                Subscribe to get special offers, free giveaways, and health tips.
+                Subscribe to get special offers, exclusive deals, and latest updates.
               </p>
             </div>
             
@@ -44,13 +44,13 @@ const Footer = () => {
           <div className="col-span-2 md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary">
-                <span className="text-xl font-bold text-white">H+</span>
+                <span className="text-xl font-bold text-white">R</span>
               </div>
-              <span className="text-xl font-bold text-primary">HealthPlus</span>
+              <span className="text-xl font-bold text-primary">Rasss</span>
             </div>
             
             <p className="text-sm text-muted-foreground mb-4">
-              Your trusted partner in health and wellness since 2020.
+              Your trusted online shopping destination since 2020.
             </p>
 
             {/* Contact Info */}
@@ -61,11 +61,11 @@ const Footer = () => {
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4" />
-                <span>support@healthplus.com</span>
+                <span>support@rasss.com</span>
               </div>
               <div className="flex items-center gap-2 text-muted-foreground">
                 <MapPin className="h-4 w-4" />
-                <span>123 Health St, Wellness City</span>
+                <span>123 Shop St, Commerce City</span>
               </div>
             </div>
           </div>
@@ -134,7 +134,7 @@ const Footer = () => {
 
           {/* Copyright */}
           <div className="mt-8 text-center text-sm text-muted-foreground">
-            <p>© 2024 HealthPlus Pharmacy. All rights reserved. | Trusted by 50,000+ customers worldwide</p>
+            <p>© 2024 Rasss. All rights reserved. | Trusted by 50,000+ customers worldwide</p>
           </div>
         </div>
       </div>

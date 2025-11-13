@@ -8,19 +8,19 @@ const Header = () => {
   const [wishlistCount] = useState(5);
 
   const categories = [
-    "Health & Wellness",
-    "Beauty & Personal Care",
-    "Mother & Baby",
-    "Vitamins & Supplements",
-    "Medical Devices",
-    "Skincare",
+    "Electronics",
+    "Fashion",
+    "Home & Living",
+    "Sports & Outdoors",
+    "Books & Media",
+    "Toys & Games",
   ];
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border bg-card/95 backdrop-blur supports-[backdrop-filter]:bg-card/80">
       {/* Top Bar */}
       <div className="bg-primary text-primary-foreground py-2 text-center text-sm font-medium">
-        🎉 Free Delivery on Orders Over $50 | Shop Now & Save!
+        🎉 Free Shipping on Orders Over $50 | Shop Now & Save!
       </div>
 
       {/* Main Header */}
@@ -29,9 +29,9 @@ const Header = () => {
           {/* Logo */}
           <div className="flex items-center gap-2">
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-primary to-secondary">
-              <span className="text-xl font-bold text-white">H+</span>
+              <span className="text-xl font-bold text-white">R</span>
             </div>
-            <span className="hidden text-xl font-bold text-primary md:block">HealthPlus</span>
+            <span className="hidden text-xl font-bold text-primary md:block">Rasss</span>
           </div>
 
           {/* Search Bar */}
