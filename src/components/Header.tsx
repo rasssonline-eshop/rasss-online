@@ -50,24 +50,10 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-blue-200/20 dark:border-blue-800/20 shadow-lg">
-      {/* Animated Gradient Background */}
       <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-cyan-400 to-indigo-500 dark:from-blue-600 dark:via-indigo-600 dark:to-blue-700 animate-gradient-x" />
       <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-cyan-300/20" />
       <div className="absolute inset-0 backdrop-blur-[2px]" />
-      
-      {/* Content */}
       <div className="relative">
-        {/* Top Bar - Elegant Promo */}
-        <div className="hidden lg:block bg-gradient-to-r from-white/10 via-white/20 to-white/10 backdrop-blur-md border-b border-white/20">
-          <div className="container mx-auto px-4 py-2">
-            <div className="flex items-center justify-center gap-3 text-white text-sm font-medium">
-              <Package className="h-4 w-4 text-yellow-300" />
-              <span className="font-semibold">Free Shipping on Orders Over {formatUSDToPKR(50)}</span>
-              <span>•</span>
-              <span className="text-blue-50">Shop Now & Save Big!</span>
-            </div>
-          </div>
-        </div>
 
         {/* Main Header */}
         <div className="container mx-auto px-3 sm:px-4 lg:px-6 py-3 sm:py-3.5 lg:py-4">
