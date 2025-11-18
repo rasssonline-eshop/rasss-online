@@ -123,7 +123,11 @@ const Hero = () => {
                       </div>
                       
                       <div className="flex flex-col h-full items-center justify-center p-8">
-                        <div className="text-9xl mb-6 animate-pulse">{product.image}</div>
+                        <img
+                          src={`https://picsum.photos/seed/hero-${product.id}/800/500`}
+                          alt={product.name}
+                          className="mb-6 h-[280px] w-full object-cover rounded-2xl"
+                        />
                         <h3 className="text-2xl font-bold text-center mb-2">{product.name}</h3>
                         <p className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
                           {formatUSDToPKR(product.priceUSD)}

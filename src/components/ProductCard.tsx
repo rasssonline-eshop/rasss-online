@@ -31,6 +31,9 @@ const ProductCard = ({
   id,
 }: ProductCardProps) => {
   const { addItem } = useCart();
+  const imgSrc = (typeof image === "string" && image.startsWith("http"))
+    ? image
+    : `https://picsum.photos/seed/${encodeURIComponent(String(id))}-${encodeURIComponent(name)}/600/600`;
   return (
     <Card className="group relative overflow-hidden border-2 hover:border-primary hover:shadow-xl transition-all duration-300 animate-scale-in">
       {/* Discount Badge */}
@@ -51,17 +54,11 @@ const ProductCard = ({
 
       {/* Product Image */}
       <div className="relative aspect-square overflow-hidden bg-muted">
-        {image ? (
-          <img
-            src={image}
-            alt={name}
-            className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300"
-          />
-        ) : (
-          <div className="flex h-full items-center justify-center">
-            <div className="text-6xl">🏥</div>
-          </div>
-        )}
+        <img
+          src={imgSrc}
+          alt={name}
+          className="h-full w-full object-cover group-hover:scale-110 transition-transform duration-300"
+        />
         
         {!inStock && (
           <div className="absolute inset-0 bg-card/80 backdrop-blur-sm flex items-center justify-center">

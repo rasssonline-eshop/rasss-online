@@ -41,7 +41,13 @@ const ProductDetail = () => {
       <main className="flex-1">
     <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-        <Card className="p-8 flex items-center justify-center text-9xl bg-muted/30">{product.image || "🏥"}</Card>
+        <Card className="p-8 flex items-center justify-center bg-muted/30">
+          <img
+            src={`https://picsum.photos/seed/${encodeURIComponent(product.id)}-${encodeURIComponent(product.name)}/800/600`}
+            alt={product.name}
+            className="max-h-[500px] w-full object-cover rounded-md"
+          />
+        </Card>
         <div className="space-y-4">
           <h1 className="text-3xl font-bold">{product.name}</h1>
           <div className="flex items-center gap-2">
