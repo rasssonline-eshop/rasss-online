@@ -6,6 +6,8 @@ import { Input } from "@/components/ui/input";
 import { formatUSDToPKR } from "@/lib/currency";
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart";
 import { Bar, BarChart, CartesianGrid, XAxis, YAxis } from "recharts";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const SellerDashboard = () => {
   const [products, setProducts] = useState(initialProducts);
@@ -43,6 +45,9 @@ const SellerDashboard = () => {
   ];
 
   return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
     <div className="container mx-auto px-4 py-12 space-y-8">
       <h1 className="text-3xl font-bold">Seller Dashboard</h1>
 
@@ -110,6 +115,9 @@ const SellerDashboard = () => {
           <a href="/">Back to Home</a>
         </Button>
       </div>
+    </div>
+      </main>
+      <Footer />
     </div>
   );
 };

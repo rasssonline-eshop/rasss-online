@@ -1,9 +1,14 @@
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const FlashSales = () => {
   const deals = products.filter((p) => p.discount && p.discount > 0);
   return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
     <section className="py-16 bg-muted/30">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
@@ -19,6 +24,9 @@ const FlashSales = () => {
         </div>
       </div>
     </section>
+      </main>
+      <Footer />
+    </div>
   );
 };
 

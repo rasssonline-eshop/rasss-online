@@ -2,6 +2,8 @@ import { useParams, Link } from "react-router-dom";
 import { products } from "@/data/products";
 import ProductCard from "@/components/ProductCard";
 import { Card } from "@/components/ui/card";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const CategoryPage = () => {
   const { slug } = useParams();
@@ -23,6 +25,9 @@ const CategoryPage = () => {
   }
 
   return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
     <section className="py-16 bg-background">
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
@@ -38,6 +43,9 @@ const CategoryPage = () => {
         </div>
       </div>
     </section>
+      </main>
+      <Footer />
+    </div>
   );
 };
 

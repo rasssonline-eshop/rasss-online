@@ -7,27 +7,38 @@ import { Star } from "lucide-react";
 import { formatUSDToPKR } from "@/lib/currency";
 import { useCart } from "@/context/CartContext";
 import { toast } from "@/components/ui/sonner";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const ProductDetail = () => {
   const { id } = useParams();
   const product = id ? getProductById(id) : undefined;
+  const { addItem } = useCart();
 
   if (!product) {
     return (
-      <div className="container mx-auto px-4 py-16">
-        <Card className="p-8 text-center">
-          <h2 className="text-2xl font-bold mb-2">Product not found</h2>
-          <p className="text-muted-foreground mb-6">The product you are looking for does not exist.</p>
-          <Link to="/">
-            <Button>Go back home</Button>
-          </Link>
-        </Card>
+      <div className="min-h-screen flex flex-col">
+        <Header />
+        <main className="flex-1">
+          <div className="container mx-auto px-4 py-16">
+            <Card className="p-8 text-center">
+              <h2 className="text-2xl font-bold mb-2">Product not found</h2>
+              <p className="text-muted-foreground mb-6">The product you are looking for does not exist.</p>
+              <Link to="/">
+                <Button>Go back home</Button>
+              </Link>
+            </Card>
+          </div>
+        </main>
+        <Footer />
       </div>
     );
   }
 
-  const { addItem } = useCart();
   return (
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
     <div className="container mx-auto px-4 py-12">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <Card className="p-8 flex items-center justify-center text-9xl bg-muted/30">{product.image || "🏥"}</Card>
@@ -64,6 +75,9 @@ const ProductDetail = () => {
           </div>
         </div>
       </div>
+    </div>
+      </main>
+      <Footer />
     </div>
   );
 };

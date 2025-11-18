@@ -4,6 +4,8 @@ import { Card } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Link } from "react-router-dom";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const Cart = () => {
   const { items, updateQuantity, removeItem, clear, totalUSD } = useCart();
@@ -12,8 +14,11 @@ const Cart = () => {
   const grandTotalPKR = toPKR(totalUSD + shippingUSD);
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="text-3xl font-bold mb-6">Shopping Cart</h1>
+    <div className="min-h-screen flex flex-col">
+      <Header />
+      <main className="flex-1">
+      <div className="container mx-auto px-4 py-12">
+        <h1 className="text-3xl font-bold mb-6">Shopping Cart</h1>
       {items.length === 0 ? (
         <Card className="p-8 text-center">
           <p className="text-muted-foreground mb-6">Your cart is empty.</p>
@@ -71,6 +76,9 @@ const Cart = () => {
           </Card>
         </div>
       )}
+      </div>
+      </main>
+      <Footer />
     </div>
   );
 };
