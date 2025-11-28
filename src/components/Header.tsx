@@ -33,14 +33,19 @@ const Header = () => {
   const isDark = theme === "dark";
 
   const categories = [
-    { name: "Vitamins & Supplements", slug: "vitamins-supplements", icon: Pill },
-    { name: "Digestive Health", slug: "digestive-health", icon: Leaf },
-    { name: "Heart Health", slug: "heart-health", icon: Activity },
-    { name: "Daily Wellness", slug: "daily-wellness", icon: Star },
-    { name: "Skin & Joint", slug: "skin-joint", icon: User },
-    { name: "Sleep & Relaxation", slug: "sleep-relaxation", icon: Moon },
-    { name: "Immune Support", slug: "immune-support", icon: Shield },
-    { name: "Energy Support", slug: "energy-support", icon: Battery },
+    { name: "Fragrances", slug: "fragrances", icon: Star },
+    { name: "Makeup", slug: "makeup", icon: Star },
+    { name: "Baby Care & Diapers", slug: "baby-care-diapers", icon: User },
+    { name: "Vitamins", slug: "vitamins", icon: Pill },
+    { name: "Skin Care", slug: "skin-care", icon: Leaf },
+    { name: "Baby Accessories", slug: "baby-accessories", icon: Package },
+    { name: "Hair Care", slug: "hair-care", icon: Activity },
+    { name: "Personal care", slug: "personal-care", icon: Shield },
+    { name: "Baby Milk & Food", slug: "baby-milk-food", icon: Package },
+    { name: "Sport Nutrition", slug: "sport-nutrition", icon: Activity },
+    { name: "Healthy Devices", slug: "healthy-devices", icon: Battery },
+    { name: "Healthy Nutrition", slug: "healthy-nutrition", icon: Leaf },
+    { name: "Home Health Care", slug: "home-health-care", icon: Shield },
   ];
 
   const productBar = [
@@ -52,9 +57,8 @@ const Header = () => {
   return (
     <header className="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 border-b border-blue-200/30 dark:border-blue-800/30 shadow">
       <div className="bg-teal-600 text-white text-xs md:text-sm font-semibold">
-        <div className="container mx-auto px-3 md:px-4 py-1.5 md:py-2 flex items-center justify-between">
+        <div className="container mx-auto px-3 md:px-4 py-1.5 md:py-2 flex items-center">
           <span>Extra discount 20% on credit & prepaid cards</span>
-          <span className="hidden md:inline">Free delivery on orders above PKR 5,000</span>
         </div>
       </div>
       <div className="relative">
