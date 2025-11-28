@@ -72,7 +72,7 @@ const Cart = () => {
               <span>Total</span>
               <span>{formatPKR(grandTotalPKR)}</span>
             </div>
-            <Button className="w-full rounded-full bg-accent text-accent-foreground">Checkout</Button>
+            <Button className="w-full rounded-none bg-accent text-accent-foreground">Checkout</Button>
           </Card>
         </div>
       )}

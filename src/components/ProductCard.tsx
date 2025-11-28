@@ -47,7 +47,7 @@ const ProductCard = ({
       <Button
         size="icon"
         variant="ghost"
-        className="absolute top-3 right-3 z-10 h-9 w-9 rounded-full bg-card/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all"
+        className="absolute top-3 right-3 z-10 h-9 w-9 rounded-none bg-card/80 backdrop-blur-sm hover:bg-primary hover:text-primary-foreground transition-all"
       >
         <Heart className="h-4 w-4" />
       </Button>
@@ -95,7 +95,9 @@ const ProductCard = ({
 
         {/* Add to Cart Button */}
         <Button
-          className="w-full rounded-full bg-accent hover:bg-accent-hover text-accent-foreground font-semibold shadow-md hover:shadow-lg transition-all"
+          className="w-full rounded-none bg-accent hover:bg-accent-hover text-accent-foreground font-semibold shadow-md hover:shadow-lg transition-all"
+          
+          
           disabled={!inStock}
           onClick={() => {
             addItem({ id: String(id), name, priceUSD: price, image, quantity: 1 });

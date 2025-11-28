@@ -21,13 +21,13 @@ All colors MUST be HSL.
     --popover-foreground: 215 25% 15%;
 
     /* Primary - Professional Blue */
-    --primary: 210 100% 56%;
+    --primary: 210 100% 45%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 210 100% 70%;
+    --primary-light: 210 100% 58%;
     --primary-glow: 210 100% 85%;
 
     /* Secondary - Elegant Indigo */
-    --secondary: 235 70% 58%;
+    --secondary: 235 70% 50%;
     --secondary-foreground: 0 0% 100%;
 
     /* Muted surfaces */
@@ -57,14 +57,14 @@ All colors MUST be HSL.
     --ring: 210 100% 56%;
 
     /* Radius */
-    --radius: 0.75rem;
+    --radius: 0rem;
 
     /* Elegant Blue Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(210 100% 56%), hsl(190 95% 50%));
-    --gradient-secondary: linear-gradient(135deg, hsl(235 70% 58%), hsl(210 100% 56%));
-    --gradient-hero: linear-gradient(135deg, hsl(210 100% 96%), hsl(190 95% 96%));
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 99%));
-    --gradient-header: linear-gradient(120deg, hsl(210 100% 56%), hsl(190 95% 50%), hsl(235 70% 58%));
+    --gradient-primary: linear-gradient(135deg, hsl(210 100% 45%), hsl(190 95% 45%));
+    --gradient-secondary: linear-gradient(135deg, hsl(235 70% 50%), hsl(210 100% 45%));
+    --gradient-hero: linear-gradient(135deg, hsl(210 100% 94%), hsl(190 95% 94%));
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 99%), hsl(210 20% 98%));
+    --gradient-header: linear-gradient(120deg, hsl(210 100% 45%), hsl(190 95% 45%), hsl(235 70% 50%));
     
     /* Shadows with Blue Tint */
     --shadow-sm: 0 1px 2px 0 hsl(210 50% 10% / 0.05);
@@ -190,7 +190,7 @@ All colors MUST be HSL.
   }
 
   ::-webkit-scrollbar-thumb {
-    @apply bg-primary/30 rounded-full;
+    @apply bg-primary/30;
   }
 
   ::-webkit-scrollbar-thumb:hover {

@@ -27,9 +27,9 @@ const Footer = () => {
               <Input
                 type="email"
                 placeholder="Enter your email"
-                className="w-full md:w-80 rounded-full border-2"
+                className="w-full md:w-80 rounded-none border-2"
               />
-              <Button className="rounded-full bg-accent hover:bg-accent-hover text-accent-foreground font-semibold px-8">
+              <Button className="rounded-none bg-accent hover:bg-accent-hover text-accent-foreground font-semibold px-8">
                 Subscribe
               </Button>
             </div>
@@ -97,16 +97,16 @@ const Footer = () => {
             <div className="flex items-center gap-4">
               <span className="text-sm text-primary-foreground">Follow us:</span>
               <div className="flex gap-2">
-                <Button size="icon" variant="outline" className="h-9 w-9 rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary">
+                <Button size="icon" variant="outline" className="h-9 w-9 rounded-none hover:bg-primary hover:text-primary-foreground hover:border-primary">
                   <Facebook className="h-4 w-4" />
                 </Button>
-                <Button size="icon" variant="outline" className="h-9 w-9 rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary">
+                <Button size="icon" variant="outline" className="h-9 w-9 rounded-none hover:bg-primary hover:text-primary-foreground hover:border-primary">
                   <Twitter className="h-4 w-4" />
                 </Button>
-                <Button size="icon" variant="outline" className="h-9 w-9 rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary">
+                <Button size="icon" variant="outline" className="h-9 w-9 rounded-none hover:bg-primary hover:text-primary-foreground hover:border-primary">
                   <Instagram className="h-4 w-4" />
                 </Button>
-                <Button size="icon" variant="outline" className="h-9 w-9 rounded-full hover:bg-primary hover:text-primary-foreground hover:border-primary">
+                <Button size="icon" variant="outline" className="h-9 w-9 rounded-none hover:bg-primary hover:text-primary-foreground hover:border-primary">
                   <Youtube className="h-4 w-4" />
                 </Button>
               </div>
@@ -116,16 +116,16 @@ const Footer = () => {
             <div className="flex items-center gap-3">
               <span className="text-sm text-primary-foreground">We accept:</span>
               <div className="flex gap-2 opacity-60">
-                <div className="h-8 w-12 rounded border border-border bg-background flex items-center justify-center text-xs font-semibold">
+                <div className="h-8 w-12 border border-border bg-background flex items-center justify-center text-xs font-semibold">
                   VISA
                 </div>
-                <div className="h-8 w-12 rounded border border-border bg-background flex items-center justify-center text-xs font-semibold">
+                <div className="h-8 w-12 border border-border bg-background flex items-center justify-center text-xs font-semibold">
                   MC
                 </div>
-                <div className="h-8 w-12 rounded border border-border bg-background flex items-center justify-center text-xs font-semibold">
+                <div className="h-8 w-12 border border-border bg-background flex items-center justify-center text-xs font-semibold">
                   AMEX
                 </div>
-                <div className="h-8 w-12 rounded border border-border bg-background flex items-center justify-center text-xs font-semibold">
+                <div className="h-8 w-12 border border-border bg-background flex items-center justify-center text-xs font-semibold">
                   PP
                 </div>
               </div>

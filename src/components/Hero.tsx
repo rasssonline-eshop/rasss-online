@@ -37,7 +37,61 @@ const featuredProducts = [
 
 const Hero = () => {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/10 to-background">
+    <section className="relative overflow-hidden bg-gradient-to-br from-primary/10 via-secondary/10 to-background pt-6 md:pt-8">
+      <div className="relative w-screen left-1/2 -translate-x-1/2 bg-green-600 text-white text-sm md:text-base font-semibold py-2 md:py-3 mb-2 md:mb-3">
+        <div className="container mx-auto px-4 flex items-center justify-center">
+          <span className="uppercase tracking-wide">Extra discount 20% on credit & prepaid cards</span>
+        </div>
+      </div>
+      <div className="relative w-screen left-1/2 -translate-x-1/2 h-[320px] md:h-[380px] lg:h-[480px] animate-scale-in mb-8">
+        <Carousel
+          opts={{
+            align: "start",
+            loop: true,
+          }}
+          plugins={[
+            Autoplay({
+              delay: 3000,
+            })
+          ]}
+          className="w-full h-full"
+        >
+          <CarouselContent className="h-full items-stretch">
+            {featuredProducts.map((product) => (
+              <CarouselItem key={product.id} className="h-full">
+                <div className="relative h-full overflow-hidden bg-gradient-to-r from-red-700 via-red-600 to-red-500">
+                  <div className="absolute left-6 md:left-10 top-6 md:top-10 text-white max-w-sm">
+                    <div className="text-lg md:text-xl font-semibold mb-1">Glowy Skin</div>
+                    <div className="text-3xl md:text-5xl lg:text-6xl font-extrabold leading-tight">Discount</div>
+                    <div className="text-5xl md:text-7xl lg:text-8xl font-black">50<span className="text-3xl md:text-4xl align-top">% </span><span className="text-2xl md:text-3xl">off</span></div>
+                    <Button className="mt-4 rounded-none bg-primary text-primary-foreground px-6">Shop now</Button>
+                  </div>
+                  <div className="absolute bottom-8 left-1/2 -translate-x-1/2 w-[90%] h-12 md:h-14 lg:h-16 bg-white/20" />
+                  <div className="flex h-full items-end justify-center gap-6 pb-8">
+                    {[1,2,3].map((i) => (
+                      <img
+                        key={i}
+                        src={`https://picsum.photos/seed/hero-${product.id}-${i}/500/700`}
+                        alt={product.name}
+                        className="h-[220px] md:h-[280px] lg:h-[340px] w-auto object-cover shadow-xl"
+                      />
+                    ))}
+                  </div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <CarouselPrevious
+            variant="ghost"
+            className="left-2 h-5 w-5 bg-white/40 dark:bg-white/10 border border-white/30 text-foreground backdrop-blur-sm hover:bg-white/60 dark:hover:bg-white/20"
+          />
+          <CarouselNext
+            variant="ghost"
+            className="right-2 h-5 w-5 bg-white/40 dark:bg-white/10 border border-white/30 text-foreground backdrop-blur-sm hover:bg-white/60 dark:hover:bg-white/20"
+          />
+        </Carousel>
+        <div className="pointer-events-none absolute inset-0 bg-gradient-to-b from-background/20 via-transparent to-background/20" />
+      </div>
       <div className="container mx-auto px-4 py-16 md:py-24">
         <div className="grid gap-8 md:grid-cols-2 items-center">
           {/* Content */}
@@ -99,54 +153,11 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Hero Carousel with Popular Products */}
-          <div className="relative h-[400px] md:h-[500px] animate-scale-in">
-            <Carousel
-              opts={{
-                align: "start",
-                loop: true,
-              }}
-              plugins={[
-                Autoplay({
-                  delay: 3000,
-                })
-              ]}
-              className="w-full h-full"
-            >
-              <CarouselContent className="h-full">
-                {featuredProducts.map((product) => (
-                  <CarouselItem key={product.id} className="h-full">
-                    <div className="relative h-full rounded-3xl bg-gradient-to-br from-primary/20 to-secondary/20 backdrop-blur-sm overflow-hidden">
-                      {/* Discount Badge */}
-                      <div className="absolute top-4 left-4 bg-accent text-accent-foreground px-4 py-2 rounded-full font-bold text-sm shadow-lg z-10">
-                        {product.discount}
-                      </div>
-                      
-                      <div className="flex flex-col h-full items-center justify-center p-8">
-                        <img
-                          src={`https://picsum.photos/seed/hero-${product.id}/800/500`}
-                          alt={product.name}
-                          className="mb-6 h-[280px] w-full object-cover rounded-2xl"
-                        />
-                        <h3 className="text-2xl font-bold text-center mb-2">{product.name}</h3>
-                        <p className="text-3xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
-                          {formatUSDToPKR(product.priceUSD)}
-                        </p>
-                      </div>
-                      
-                      {/* Floating Elements */}
-                      <div className="absolute top-10 right-10 h-20 w-20 rounded-full bg-accent/30 blur-2xl animate-pulse" />
-                      <div className="absolute bottom-10 left-10 h-32 w-32 rounded-full bg-primary/20 blur-3xl animate-pulse" style={{ animationDelay: '1s' }} />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-              <CarouselPrevious className="left-2" />
-              <CarouselNext className="right-2" />
-            </Carousel>
-          </div>
+          
         </div>
       </div>
+
+      
 
       {/* Wave Divider */}
       <div className="absolute bottom-0 left-0 right-0">

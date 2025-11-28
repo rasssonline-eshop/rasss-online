@@ -48,7 +48,7 @@ const CategoryGrid = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="p-6 text-center">
-                  <div className={`mx-auto mb-4 h-16 w-16 rounded-2xl bg-gradient-to-br ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
+                  <div className={`mx-auto mb-4 h-16 w-16 bg-gradient-to-br ${category.color} flex items-center justify-center group-hover:scale-110 transition-transform duration-300`}>
                     <Icon className="h-8 w-8 text-primary" />
                   </div>
                   <h3 className="font-semibold text-sm mb-1 group-hover:text-primary transition-colors">

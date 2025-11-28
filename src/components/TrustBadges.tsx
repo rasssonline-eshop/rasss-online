@@ -36,7 +36,7 @@ const TrustBadges = () => {
               className="p-6 text-center hover:shadow-md transition-shadow animate-fade-in"
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="inline-flex h-12 w-12 items-center justify-center rounded-full bg-primary/10 mb-3">
+              <div className="inline-flex h-12 w-12 items-center justify-center bg-primary/10 mb-3">
                 <badge.icon className="h-6 w-6 text-primary" />
               </div>
               <h3 className="font-semibold text-sm mb-1">{badge.title}</h3>

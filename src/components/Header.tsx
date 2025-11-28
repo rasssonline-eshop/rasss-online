@@ -44,15 +44,19 @@ const Header = () => {
   ];
 
   const productBar = [
+    { label: "Offers", path: "/flash-sales", icon: Package },
     { label: "Flash Sales", path: "/flash-sales", icon: Zap },
     { label: "E-Services", path: "/e-services", icon: Smartphone },
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-blue-200/20 dark:border-blue-800/20 shadow-lg">
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-400 via-cyan-400 to-indigo-500 dark:from-blue-600 dark:via-indigo-600 dark:to-blue-700 animate-gradient-x" />
-      <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-cyan-300/20" />
-      <div className="absolute inset-0 backdrop-blur-[2px]" />
+    <header className="sticky top-0 z-50 w-full bg-white dark:bg-gray-900 border-b border-blue-200/30 dark:border-blue-800/30 shadow">
+      <div className="bg-teal-600 text-white text-xs md:text-sm font-semibold">
+        <div className="container mx-auto px-3 md:px-4 py-1.5 md:py-2 flex items-center justify-between">
+          <span>Extra discount 20% on credit & prepaid cards</span>
+          <span className="hidden md:inline">Free delivery on orders above PKR 5,000</span>
+        </div>
+      </div>
       <div className="relative">
 
         {/* Main Header */}
@@ -64,8 +68,8 @@ const Header = () => {
               onClick={() => navigate("/")}
             >
               <div className="relative flex-shrink-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-yellow-300/20 via-pink-300/20 to-purple-300/20 rounded-xl blur-lg group-hover:blur-xl transition-all duration-500" />
-                <div className="relative bg-white/95 dark:bg-white/90 p-1.5 sm:p-2 rounded-xl shadow-2xl group-hover:shadow-[0_0_30px_rgba(251,191,36,0.4)] transition-all duration-500 ring-1 ring-white/40 group-hover:ring-yellow-300/50 group-hover:scale-105">
+                <div className="absolute inset-0 bg-gradient-to-br from-yellow-300/20 via-pink-300/20 to-purple-300/20 blur-lg group-hover:blur-xl transition-all duration-500" />
+                <div className="relative bg-white/95 dark:bg-white/90 p-1.5 sm:p-2 shadow-2xl group-hover:shadow-[0_0_30px_rgba(251,191,36,0.4)] transition-all duration-500 ring-1 ring-white/40 group-hover:ring-yellow-300/50 group-hover:scale-105">
                   <img
                     src="/Rasss-logo.png"
                     alt="Rasss"
@@ -83,86 +87,19 @@ const Header = () => {
               </div>
             </div>
 
-            {/* Desktop Search Bar */}
-            <div className="hidden lg:flex flex-1 max-w-xl xl:max-w-2xl mx-4">
-              <div className="relative w-full group">
-                <div className="absolute inset-0 bg-white/20 rounded-full blur-md transition-all duration-300" />
-                <div className="relative flex items-center">
-                  <Search className="absolute left-4 h-5 w-5 text-blue-600 dark:text-blue-300 z-10" />
-                  <Input
-                    type="search"
-                    placeholder="Search for wellness products..."
-                    className="w-full rounded-full bg-white dark:bg-gray-800 border-2 border-white/40 dark:border-gray-700 pl-12 pr-4 py-6 text-sm placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-900 dark:text-white focus:border-blue-300 dark:focus:border-blue-500 focus:ring-4 focus:ring-blue-200/50 dark:focus:ring-blue-500/30 transition-all duration-300 shadow-xl font-medium"
-                  />
-                </div>
-              </div>
-            </div>
-
-            {/* Desktop Actions - Redesigned Icons */}
-            <div className="hidden lg:flex items-center gap-2 xl:gap-3">
-              {/* Theme Toggle - Elegant Design */}
-              <div className="hidden xl:flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/20 dark:bg-white/10 backdrop-blur-md border border-white/10 shadow-lg hover:bg-white/25 dark:hover:bg-white/15 transition-all duration-300">
-                <Sun className="h-4 w-4 text-amber-200 drop-shadow-[0_0_6px_rgba(252,211,77,0.6)]" />
-                <Switch
-                  checked={isDark}
-                  onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
-                  className="data-[state=checked]:bg-gradient-to-r data-[state=checked]:from-indigo-500 data-[state=checked]:to-blue-500 data-[state=unchecked]:bg-gradient-to-r data-[state=unchecked]:from-amber-400 data-[state=unchecked]:to-yellow-400 shadow-md"
-                />
-                <Moon className="h-4 w-4 text-indigo-100 drop-shadow-[0_0_6px_rgba(165,180,252,0.6)]" />
-              </div>
-
-              {/* Wishlist - Subtle Design */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="relative rounded-full bg-white/15 hover:bg-white/25 dark:bg-white/10 dark:hover:bg-white/20 border border-white/10 hover:border-white/20 h-11 w-11 text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg backdrop-blur-sm"
-                onClick={() => toast("Added to wishlist")}
-              >
-                <Heart className="h-5 w-5 drop-shadow-md" />
-                {wishlistCount > 0 && (
-                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-rose-400 via-pink-500 to-fuchsia-500 text-[10px] font-bold text-white shadow-lg ring-2 ring-white/60 animate-pulse">
-                    {wishlistCount}
-                  </span>
-                )}
-              </Button>
-
-              {/* User Account - Subtle Design */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="relative rounded-full bg-white/15 hover:bg-white/25 dark:bg-white/10 dark:hover:bg-white/20 border border-white/10 hover:border-white/20 h-11 w-11 text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg backdrop-blur-sm"
-                onClick={() => navigate("/seller")}
-              >
-                <User className="h-5 w-5 drop-shadow-md" />
-              </Button>
-
-              {/* Shopping Cart - Subtle Design */}
-              <Button
-                variant="ghost"
-                size="icon"
-                className="relative rounded-full bg-white/15 hover:bg-white/25 dark:bg-white/10 dark:hover:bg-white/20 border border-white/10 hover:border-white/20 h-11 w-11 text-white transition-all duration-300 hover:scale-110 shadow-md hover:shadow-lg backdrop-blur-sm"
-                onClick={() => navigate("/cart")}
-              >
-                <ShoppingCart className="h-5 w-5 drop-shadow-md" />
-                {cartCount > 0 && (
-                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-gradient-to-br from-amber-400 via-orange-500 to-red-500 text-[10px] font-bold text-white shadow-lg ring-2 ring-white/60">
-                    {cartCount}
-                  </span>
-                )}
-              </Button>
-
-              {/* Categories Dropdown */}
+            {/* All Categories - Desktop */}
+            <div className="hidden lg:flex">
               <DropdownMenu>
                 <DropdownMenuTrigger asChild>
                   <Button 
-                    className="rounded-full bg-white/90 hover:bg-white dark:bg-white/20 dark:hover:bg-white/30 border border-white/30 text-blue-700 dark:text-white backdrop-blur-md transition-all duration-300 hover:scale-105 shadow-lg font-semibold"
+                    className="rounded-none bg-white/90 hover:bg-white dark:bg-white/20 dark:hover:bg-white/30 border border-white/30 text-blue-700 dark:text-white backdrop-blur-md transition-all duration-300 hover:scale-105 shadow-lg font-semibold h-11 px-4"
                     size="sm"
                   >
                     <Menu className="h-4 w-4 mr-2" />
-                    Categories
+                    All Categories
                   </Button>
                 </DropdownMenuTrigger>
-                <DropdownMenuContent align="end" className="w-64 bg-white/98 dark:bg-gray-900/98 backdrop-blur-xl border-blue-200/50 dark:border-blue-800/50 shadow-2xl rounded-2xl">
+                <DropdownMenuContent align="start" className="w-64 bg-white/98 dark:bg-gray-900/98 backdrop-blur-xl border-blue-200/50 dark:border-blue-800/50 shadow-2xl rounded-none">
                   <DropdownMenuLabel className="text-base font-bold text-blue-700 dark:text-blue-400">
                     All Categories
                   </DropdownMenuLabel>
@@ -173,7 +110,7 @@ const Header = () => {
                       <DropdownMenuItem
                         key={c.slug}
                         onClick={() => navigate(`/category/${c.slug}`)}
-                        className="cursor-pointer hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-colors py-3 group rounded-xl"
+                        className="cursor-pointer hover:bg-blue-50 dark:hover:bg-blue-950/50 transition-colors py-3 group rounded-none"
                       >
                         <Icon className="mr-3 h-4 w-4 text-blue-600 dark:text-blue-400 group-hover:scale-110 transition-transform" />
                         <span className="font-medium">{c.name}</span>
@@ -184,12 +121,83 @@ const Header = () => {
               </DropdownMenu>
             </div>
 
+            {/* Desktop Search Bar */}
+            <div className="hidden lg:flex flex-1 max-w-xl xl:max-w-2xl mx-4">
+              <div className="relative w-full group">
+                <div className="absolute inset-0 bg-white/20 blur-md transition-all duration-300" />
+                <div className="relative flex items-center">
+                  <Search className="absolute left-4 h-5 w-5 text-blue-600 dark:text-blue-300 z-10" />
+                  <Input
+                    type="search"
+                    placeholder="Search for wellness products..."
+                    className="w-full rounded-none bg-white dark:bg-gray-800 border-2 border-white/40 dark:border-gray-700 pl-12 pr-4 py-6 text-sm placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-900 dark:text-white focus:border-blue-300 dark:focus:border-blue-500 focus:ring-4 focus:ring-blue-200/50 dark:focus:ring-blue-500/30 transition-all duration-300 shadow-xl font-medium"
+                  />
+                </div>
+              </div>
+            </div>
+
+            {/* Desktop Actions - Redesigned Icons */}
+            <div className="hidden lg:flex items-center gap-2 xl:gap-3">
+              {/* Theme Toggle - Elegant Design */}
+              <div className="hidden xl:flex items-center gap-2.5 px-4 py-2 rounded-none bg-white border border-blue-100 shadow hover:bg-blue-50 transition-all">
+                <Sun className="h-4 w-4 text-amber-500" />
+                <Switch
+                  checked={isDark}
+                  onCheckedChange={(checked) => setTheme(checked ? "dark" : "light")}
+                  className="data-[state=checked]:bg-blue-600 data-[state=unchecked]:bg-amber-400"
+                />
+                <Moon className="h-4 w-4 text-indigo-600" />
+              </div>
+
+              {/* Wishlist - Subtle Design */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="relative rounded-none bg-transparent hover:bg-blue-50 border border-blue-100 h-11 w-11 text-blue-700 dark:text-white transition-all shadow"
+                onClick={() => toast("Added to wishlist")}
+              >
+                <Heart className="h-5 w-5 drop-shadow-md" />
+                {wishlistCount > 0 && (
+                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-rose-500 text-[10px] font-bold text-white shadow ring-2 ring-white animate-pulse">
+                    {wishlistCount}
+                  </span>
+                )}
+              </Button>
+
+              {/* Login & Register */}
+              <Button
+                variant="ghost"
+                className="rounded-none bg-transparent hover:bg-blue-50 border border-blue-100 h-11 px-4 text-blue-700 dark:text-white transition-all shadow font-semibold"
+                onClick={() => navigate("/seller")}
+              >
+                <User className="h-4 w-4 mr-2" />
+                Login & Register
+              </Button>
+
+              {/* Shopping Cart - Subtle Design */}
+              <Button
+                variant="ghost"
+                size="icon"
+                className="relative rounded-none bg-transparent hover:bg-blue-50 border border-blue-100 h-11 w-11 text-blue-700 dark:text-white transition-all shadow"
+                onClick={() => navigate("/cart")}
+              >
+                <ShoppingCart className="h-5 w-5 drop-shadow-md" />
+                {cartCount > 0 && (
+                  <span className="absolute -right-1 -top-1 flex h-5 w-5 items-center justify-center rounded-full bg-orange-500 text-[10px] font-bold text-white shadow ring-2 ring-white">
+                    {cartCount}
+                  </span>
+                )}
+              </Button>
+
+              
+            </div>
+
             {/* Tablet Actions (md to lg) */}
             <div className="hidden md:flex lg:hidden items-center gap-2 ml-auto">
               <Button
                 variant="ghost"
                 size="icon"
-                className="relative rounded-full bg-white/15 hover:bg-white/25 border border-white/10 h-10 w-10 text-white shadow-md backdrop-blur-sm"
+                className="relative rounded-none bg-white/15 hover:bg-white/25 border border-white/10 h-10 w-10 text-white shadow-md backdrop-blur-sm"
                 onClick={() => navigate("/cart")}
               >
                 <ShoppingCart className="h-5 w-5" />
@@ -205,7 +213,7 @@ const Header = () => {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="rounded-full bg-white/15 hover:bg-white/25 border border-white/10 h-10 w-10 text-white shadow-md backdrop-blur-sm"
+                    className="rounded-none bg-white/15 hover:bg-white/25 border border-white/10 h-10 w-10 text-white shadow-md backdrop-blur-sm"
                   >
                     <Menu className="h-5 w-5" />
                   </Button>
@@ -224,12 +232,12 @@ const Header = () => {
                       <Input
                         type="search"
                         placeholder="Search products..."
-                        className="w-full rounded-full pl-11 pr-4 py-6 text-sm border-2 border-blue-200 dark:border-blue-800 focus:border-blue-400 dark:focus:border-blue-600 shadow-lg bg-white dark:bg-gray-800"
+                        className="w-full rounded-none pl-11 pr-4 py-6 text-sm border-2 border-blue-200 dark:border-blue-800 focus:border-blue-400 dark:focus:border-blue-600 shadow-lg bg-white dark:bg-gray-800"
                       />
                     </div>
 
                     {/* Theme Toggle */}
-                    <div className="flex items-center justify-between p-4 rounded-2xl bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/50 dark:to-cyan-900/50 border-2 border-blue-200 dark:border-blue-700 shadow-md">
+                    <div className="flex items-center justify-between p-4 rounded-none bg-gradient-to-r from-blue-100 to-cyan-100 dark:from-blue-900/50 dark:to-cyan-900/50 border-2 border-blue-200 dark:border-blue-700 shadow-md">
                       <span className="text-sm font-bold text-blue-900 dark:text-blue-100">Dark Mode</span>
                       <div className="flex items-center gap-2">
                         <Sun className="h-4 w-4 text-amber-600 dark:text-amber-400" />
@@ -252,7 +260,7 @@ const Header = () => {
                             <Button
                               key={item.label}
                               variant="ghost"
-                              className="justify-start h-12 rounded-xl hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-all duration-300 hover:translate-x-1 text-blue-900 dark:text-blue-100 font-medium"
+                              className="justify-start h-12 rounded-none hover:bg-blue-100 dark:hover:bg-blue-900/50 transition-all duration-300 hover:translate-x-1 text-blue-900 dark:text-blue-100 font-medium"
                               onClick={() => {
                                 navigate(item.path);
                                 setMobileMenuOpen(false);
@@ -470,7 +478,7 @@ const Header = () => {
         </div>
 
         {/* Desktop Navigation Bar */}
-        <nav className="hidden lg:block border-t border-white/20 bg-white/10 dark:bg-black/10 backdrop-blur-md">
+        <nav className="hidden lg:block bg-white dark:bg-gray-900 border-t border-blue-100 dark:border-blue-800">
           <div className="container mx-auto px-4 lg:px-6">
             <div className="flex items-center justify-center gap-8 xl:gap-12 py-3">
               {productBar.map((item) => {
@@ -478,12 +486,12 @@ const Header = () => {
                 return (
                   <button
                     key={item.label}
-                    className="group relative flex items-center gap-2 text-sm font-bold text-white hover:text-blue-100 transition-all duration-300 py-1"
+                    className="group relative flex items-center gap-2 text-sm font-bold text-blue-900 dark:text-blue-100 hover:text-teal-700 transition-all py-1"
                     onClick={() => navigate(item.path)}
                   >
-                    <Icon className="h-4 w-4 group-hover:scale-110 transition-transform duration-300" />
+                    <Icon className="h-4 w-4 group-hover:scale-110 transition-transform" />
                     {item.label}
-                    <div className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full bg-gradient-to-r from-cyan-300 to-blue-300 transition-all duration-300 rounded-full" />
+                    <div className="absolute bottom-0 left-0 h-0.5 w-0 group-hover:w-full bg-teal-600 transition-all rounded-none" />
                   </button>
                 );
               })}
